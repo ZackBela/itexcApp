@@ -25,7 +25,7 @@ class PrincipalView extends StackedView<PrincipalViewModel> {
         color: kcBackgroundColor,
         child: Container(
           // color: kcPrimaryColor,
-          height: pSh(context: context, percentage: 0.11),
+          height: pSh(context: context, percentage: 0.10),
           width: pSw(context: context),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:itexc_app/ui/common/app_data.dart';
 import 'package:itexc_app/ui/widgets/dumb/CustomText.dart';
 import 'package:itexc_app/ui/widgets/dumb/CustomTextField.dart';
 import 'package:stacked/stacked.dart';
@@ -49,20 +50,20 @@ class HomeView extends StackedView<HomeViewModel> {
                 ),
               ],
             ).padding(all: pSh(context: context, percentage: .0)),
-            verticalSpaceMedium,
+            // verticalSpaceMedium,
             verticalSpaceMedium,
             Row(
               children: [
                 CustomText(
                   text: 'Find',
                   color: kcTextColor,
-                  size: pSh(context: context, percentage: .035),
+                  size: pSh(context: context, percentage: .032),
                 ),
                 horizontalSpaceTiny,
                 CustomText(
                   text: 'your doctor',
                   color: kcTextColor.withOpacity(.5),
-                  size: pSh(context: context, percentage: .035),
+                  size: pSh(context: context, percentage: .032),
                 ),
               ],
             ),
@@ -76,45 +77,80 @@ class HomeView extends StackedView<HomeViewModel> {
               ).padding(horizontal: pSh(context: context, percentage: .019)),
             ),
             verticalSpaceMedium,
-            verticalSpaceSmall,
+            // verticalSpaceSmall,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomText(
                   text: 'Special Doctor',
                   color: kcTextColor,
-                  size: pSh(context: context, percentage: .021),
+                  size: pSh(context: context, percentage: .019),
                   weight: FontWeight.bold,
                 ),
                 CustomText(
                   text: 'View all',
                   color: kcPrimaryColor,
-                  size: pSh(context: context, percentage: .019),
+                  size: pSh(context: context, percentage: .018),
                   weight: FontWeight.w500,
                 ),
               ],
             ),
-            verticalSpaceMedium,
-            GridView.count(
-              crossAxisCount: 4,
+            verticalSpaceSmall,
+            verticalSpaceSmall,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(
-                  'assets/images/bell.png',
-                  color: kcBackgroundColor,
-                  height: pSh(context: context, percentage: .019),
-                  width: pSh(context: context, percentage: .019),
-                )
-                    .padding(all: pSh(context: context, percentage: .019))
-                    .decorated(color: kcPrimaryColor),
-                Image.asset('assets/images/bell.png'),
-                Image.asset('assets/images/bell.png'),
-                Image.asset('assets/images/bell.png'),
-                Image.asset('assets/images/bell.png'),
-                Image.asset('assets/images/bell.png'),
-                Image.asset('assets/images/bell.png'),
-                Image.asset('assets/images/bell.png'),
+                for (var item in specialDoctorData)
+                  Column(
+                    children: [
+                      Image.asset(
+                        'assets/images/bell.png',
+                        color: kcBackgroundColor,
+                        height: pSh(context: context, percentage: .028),
+                        width: pSh(context: context, percentage: .028),
+                      )
+                          .padding(all: pSh(context: context, percentage: .019))
+                          .decorated(
+                              color: kcPrimaryColor,
+                              borderRadius: BorderRadius.circular(
+                                  pSh(context: context, percentage: .01))),
+                      verticalSpaceTiny,
+                      CustomText(
+                        text: 'hddjkbjk',
+                        size: pSh(context: context, percentage: .015),
+                      )
+                    ],
+                  ),
               ],
-            ).expanded(),
+            ).padding(horizontal: pSh(context: context, percentage: .01)),
+            verticalSpaceMedium,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                for (var item in specialDoctorData)
+                  Column(
+                    children: [
+                      Image.asset(
+                        'assets/images/bell.png',
+                        color: kcBackgroundColor,
+                        height: pSh(context: context, percentage: .028),
+                        width: pSh(context: context, percentage: .028),
+                      )
+                          .padding(all: pSh(context: context, percentage: .019))
+                          .decorated(
+                              color: kcPrimaryColor,
+                              borderRadius: BorderRadius.circular(
+                                  pSh(context: context, percentage: .01))),
+                      verticalSpaceTiny,
+                      CustomText(
+                        text: 'hddjkbjk',
+                        size: pSh(context: context, percentage: .015),
+                      )
+                    ],
+                  ),
+              ],
+            ).padding(horizontal: pSh(context: context, percentage: .01)),
+
             verticalSpaceMedium,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -122,18 +158,19 @@ class HomeView extends StackedView<HomeViewModel> {
                 CustomText(
                   text: 'Top Doctors',
                   color: kcTextColor,
-                  size: pSh(context: context, percentage: .021),
+                  size: pSh(context: context, percentage: .019),
                   weight: FontWeight.bold,
                 ),
                 CustomText(
                   text: 'View all',
                   color: kcPrimaryColor,
-                  size: pSh(context: context, percentage: .019),
+                  size: pSh(context: context, percentage: .017),
                   weight: FontWeight.w500,
                 ),
               ],
             ),
-            verticalSpaceMedium,
+            verticalSpaceSmall,
+            verticalSpaceSmall,
             ListView.builder(
               physics: BouncingScrollPhysics(),
               itemCount: 5,
@@ -142,7 +179,7 @@ class HomeView extends StackedView<HomeViewModel> {
                 return DoctorWidget()
                     .padding(right: pSh(context: context, percentage: .019));
               },
-            ).height(pSh(context: context, percentage: .25)),
+            ).height(pSh(context: context, percentage: .21)),
           ],
         ).safeArea().padding(all: pSh(context: context, percentage: .025)));
   }

@@ -15,6 +15,7 @@ class CustomButton extends StatelessWidget {
     this.onTap,
     this.isLoading = false,
     this.isGradient = false,
+    this.width = 0,
   }) : super(key: key);
   String? text;
   Color? textColor;
@@ -22,6 +23,7 @@ class CustomButton extends StatelessWidget {
   bool? hasBorder;
   bool? isLoading;
   bool? isGradient;
+  double? width;
   final Function()? onTap;
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,9 @@ class CustomButton extends StatelessWidget {
               color: textColor,
             ).center(),
     )
-        .width(pSw(context: context))
+        .width(width == 0
+            ? pSw(context: context)
+            : pSw(context: context, percentage: width!))
         .height(pSh(context: context, percentage: .065))
         .decorated(
             color: isGradient == false ? backgroundColor : null,

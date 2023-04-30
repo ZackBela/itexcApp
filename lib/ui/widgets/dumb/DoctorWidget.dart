@@ -30,18 +30,21 @@ class DoctorWidget extends StatelessWidget {
                 .positioned(right: 0),
           ],
         ),
-        verticalSpaceMedium,
+        verticalSpaceSmall,
+        // verticalSpaceSmall,
         CustomText(
           text: 'Dr. Bellamy N',
           color: kcTextColor,
+          size: pSh(context: context, percentage: .017),
         ),
-        verticalSpaceSmall,
+        verticalSpaceTiny,
         CustomText(
           text: 'Viralogist',
           weight: FontWeight.bold,
           color: Color(0xff6B779A),
+          size: pSh(context: context, percentage: .015),
         ),
-        verticalSpaceSmall,
+        verticalSpaceTiny,
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -49,16 +52,16 @@ class DoctorWidget extends StatelessWidget {
               text: '⭐️ 4.5 (135 reviews)',
               weight: FontWeight.bold,
               color: Color(0xff6B779A),
-              size: pSh(context: context, percentage: .015),
+              size: pSh(context: context, percentage: .014),
             ),
           ],
         ),
       ],
     )
-        .width(pSw(context: context, percentage: .33))
+        .width(pSw(context: context, percentage: .28))
         .padding(
-          all: pSh(context: context, percentage: .024),
-        )
+            all: pSh(context: context, percentage: .0170),
+            vertical: pSh(context: context, percentage: .016))
         .decorated(
             border: Border.all(color: kcTextColor.withOpacity(.2)),
             borderRadius:
