@@ -20,6 +20,9 @@ import 'package:itexc_app/ui/views/specialisties/specialisties_view.dart';
 import 'package:itexc_app/ui/views/doctor_page/doctor_page_view.dart';
 import 'package:itexc_app/ui/bottom_sheets/doctor_share/doctor_share_sheet.dart';
 import 'package:itexc_app/ui/views/appointement_booking/appointement_booking_view.dart';
+import 'package:itexc_app/ui/views/appointement_patient_details/appointement_patient_details_view.dart';
+import 'package:itexc_app/ui/dialogs/appointement_confirmation/appointement_confirmation_dialog.dart';
+import 'package:itexc_app/ui/views/appointement/appointement_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -40,6 +43,8 @@ import 'package:itexc_app/ui/views/appointement_booking/appointement_booking_vie
     MaterialRoute(page: SpecialistiesView),
     MaterialRoute(page: DoctorPageView),
     MaterialRoute(page: AppointementBookingView),
+    MaterialRoute(page: AppointementPatientDetailsView),
+    MaterialRoute(page: AppointementView),
 // @stacked-route
   ],
   dependencies: [
@@ -56,7 +61,8 @@ import 'package:itexc_app/ui/views/appointement_booking/appointement_booking_vie
   ],
   dialogs: [
     StackedDialog(classType: InfoAlertDialog),
-    // @stacked-dialog
+    StackedDialog(classType: AppointementConfirmationDialog),
+// @stacked-dialog
   ],
 )
 class App {}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:itexc_app/ui/common/app_colors.dart';
+import 'package:itexc_app/ui/views/appointement/appointement_view.dart';
 import 'package:itexc_app/ui/views/home/home_view.dart';
 import 'package:stacked/stacked.dart';
 
@@ -19,9 +20,7 @@ class PrincipalViewModel extends BaseViewModel {
         selectedScreen = HomeView();
         break;
       case 1:
-        selectedScreen = Container(
-          color: kcPrimaryColor,
-        );
+        selectedScreen = AppointementView();
         break;
       case 2:
         selectedScreen = Container(

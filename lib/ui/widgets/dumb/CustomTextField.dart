@@ -20,6 +20,7 @@ class CustomTextField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.backgroundcolor = kcBackgroundColor,
+    this.maxLines,
   }) : super(key: key);
   final TextEditingController? texteditingController;
   final String? hintText;
@@ -36,6 +37,7 @@ class CustomTextField extends StatelessWidget {
   final IconData? suffixIcon;
   final bool? obscureText;
   final Color? backgroundcolor;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +47,7 @@ class CustomTextField extends StatelessWidget {
       keyboardType: keyboardType,
       textInputAction: textInputAction,
       obscureText: obscureText!,
+      maxLines: maxLines ?? null,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(
           horizontal: pSw(context: context, percentage: .07),

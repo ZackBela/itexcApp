@@ -53,6 +53,17 @@ List<String> specialitiesNames = [
   'Heart',
   'Bones',
 ];
+List<String> times = [
+  '09:00 AM',
+  '09:00 AM',
+  '09:00 AM',
+  '09:00 AM',
+  '09:00 AM',
+  '09:00 AM',
+  '09:00 AM',
+  '09:00 AM',
+  '09:00 AM',
+];
 List<Map<String, dynamic>> specialities = [
   {
     'icon': 'assets/images/heartSpeciality.png',
