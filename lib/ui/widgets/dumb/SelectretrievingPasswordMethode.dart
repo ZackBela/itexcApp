@@ -5,10 +5,15 @@ import 'package:itexc_app/ui/widgets/dumb/CustomText.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 class SelectretrievingPasswordMethode extends StatelessWidget {
-  const SelectretrievingPasswordMethode({
+  SelectretrievingPasswordMethode({
     Key? key,
+    required this.index,
+    required this.onSmsTap,
+    required this.onEmailTap,
   }) : super(key: key);
-
+  int index;
+  Function()? onSmsTap;
+  Function()? onEmailTap;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -60,7 +65,8 @@ class SelectretrievingPasswordMethode extends StatelessWidget {
             .height(pSh(context: context, percentage: .14))
             .padding(all: pSh(context: context, percentage: .009))
             .decorated(
-                border: Border.all(color: kcPrimaryColor),
+                border: Border.all(
+                    color: index == 0 ? kcPrimaryColor : Colors.transparent),
                 color: kcBackgroundColor,
                 boxShadow: [
                   BoxShadow(
@@ -71,7 +77,8 @@ class SelectretrievingPasswordMethode extends StatelessWidget {
                   ),
                 ],
                 borderRadius: BorderRadius.circular(
-                    pSh(context: context, percentage: .019))),
+                    pSh(context: context, percentage: .019)))
+            .gestures(onTap: onSmsTap),
         verticalSpaceSmall,
         verticalSpaceSmall,
         Container(
@@ -114,7 +121,8 @@ class SelectretrievingPasswordMethode extends StatelessWidget {
             .height(pSh(context: context, percentage: .14))
             .padding(all: pSh(context: context, percentage: .009))
             .decorated(
-                // border: Border.all(color: kcTextColor.withOpacity(.1)),
+                border: Border.all(
+                    color: index == 1 ? kcPrimaryColor : Colors.transparent),
                 color: kcBackgroundColor,
                 boxShadow: [
                   BoxShadow(
@@ -125,7 +133,8 @@ class SelectretrievingPasswordMethode extends StatelessWidget {
                   ),
                 ],
                 borderRadius: BorderRadius.circular(
-                    pSh(context: context, percentage: .019))),
+                    pSh(context: context, percentage: .019)))
+            .gestures(onTap: onEmailTap),
       ],
     );
   }

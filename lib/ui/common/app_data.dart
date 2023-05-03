@@ -64,6 +64,12 @@ List<String> times = [
   '09:00 AM',
   '09:00 AM',
 ];
+List<String> historyFilter = [
+  'All',
+  'Messaging',
+  'Voice Call',
+  'Video Call',
+];
 List<Map<String, dynamic>> specialities = [
   {
     'icon': 'assets/images/heartSpeciality.png',
@@ -134,5 +140,47 @@ List<Map<String, dynamic>> socialMedia = [
   {
     'name': 'SnapShat',
     'logo': 'assets/images/cib_snapchat.png',
+  },
+];
+List<Map<String, dynamic>> specialDoctorButonData = [
+  {
+    'title': 'Consultation',
+    'icon': 'assets/images/Group 1395.png',
+    'color': Color(0xff4485FD),
+  },
+  {
+    'title': 'Dental',
+    'icon': 'assets/images/tooth.png',
+    'color': Color(0xffA584FF),
+  },
+  {
+    'title': 'Heart',
+    'icon': 'assets/images/heartSpeciality.png',
+    'color': Color(0xffFD4444),
+  },
+  {
+    'title': 'Hospitals',
+    'icon': 'assets/images/024-clinic.png',
+    'color': Color(0xffFFB547),
+  },
+  {
+    'title': 'Medicines',
+    'icon': 'assets/images/012-medicine.png',
+    'color': Color(0xff1AD37A),
+  },
+  {
+    'title': 'Physician',
+    'icon': 'assets/images/013-care-2.png',
+    'color': Color(0xff05D1ED),
+  },
+  {
+    'title': 'Skin',
+    'icon': 'assets/images/028-bandage.png',
+    'color': Color(0xffFD44B3),
+  },
+  {
+    'title': 'Surgeon',
+    'icon': 'assets/images/005-syringe.png',
+    'color': Color(0xffFF7070),
   },
 ];

@@ -179,6 +179,11 @@ class DoctorPageView extends StackedView<DoctorPageViewModel> {
             backgroundColor: viewModel.timeSelected != -1
                 ? kcPrimaryColor
                 : kcPrimaryColor.withOpacity(.3),
+            onTap: () {
+              viewModel.timeSelected != -1
+                  ? viewModel.goToAppointementBooking()
+                  : () {};
+            },
           )
         ],
       )

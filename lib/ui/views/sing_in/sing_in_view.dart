@@ -67,6 +67,9 @@ class SingInView extends StackedView<SingInViewModel> {
           CustomButton(
             text: 'Sign in',
             isGradient: true,
+            onTap: () {
+              viewModel.goToPrincipal();
+            },
           ),
           verticalSpaceSmall,
           verticalSpaceSmall,
@@ -75,6 +78,10 @@ class SingInView extends StackedView<SingInViewModel> {
             color: kcPrimaryColor,
             weight: FontWeight.w600,
             size: pSh(context: context, percentage: .018),
+          ).gestures(
+            onTap: () {
+              viewModel.goToForgotPassword();
+            },
           ),
           verticalSpaceMedium,
           CustomText(
@@ -139,6 +146,11 @@ class SingInView extends StackedView<SingInViewModel> {
                 text: 'Sign Up',
                 weight: FontWeight.w600,
                 color: kcPrimaryColor,
+              ),
+              gestures(
+                onTap: () {
+                  viewModel.goToSignUp();
+                },
               ),
             ],
           ),

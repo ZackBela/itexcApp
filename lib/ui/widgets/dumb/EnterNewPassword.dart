@@ -35,7 +35,7 @@ class EnterNewPassword extends StatelessWidget {
         // verticalSpaceSmall,
         CustomTextField(
           hintText: 'new password',
-          obscureText: true,
+          // obscureText: true,
           suffixIcon: Icons.remove_red_eye,
         ),
         verticalSpaceMedium,
@@ -49,7 +49,7 @@ class EnterNewPassword extends StatelessWidget {
         // verticalSpaceSmall,
         CustomTextField(
             hintText: 'confirm new password',
-            obscureText: true,
+            // obscureText: true,
             suffixIcon: Icons.remove_red_eye),
       ],
     );

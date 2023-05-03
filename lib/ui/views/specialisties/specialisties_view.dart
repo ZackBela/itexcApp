@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:itexc_app/ui/common/app_colors.dart';
 import 'package:itexc_app/ui/common/ui_helpers.dart';
-import 'package:itexc_app/ui/widgets/dumb/CustomAppBar.dart';
 import 'package:itexc_app/ui/widgets/dumb/CustomText.dart';
 import 'package:itexc_app/ui/widgets/dumb/CustomTextField.dart';
 import 'package:stacked/stacked.dart';
@@ -9,6 +8,7 @@ import 'package:styled_widget/styled_widget.dart';
 
 import '../../common/app_data.dart';
 import '../../widgets/dumb/SpecialityWidget.dart';
+import '../../widgets/smart/CustomAppBar/custom_app_bar_view.dart';
 import 'specialisties_viewmodel.dart';
 
 class SpecialistiesView extends StackedView<SpecialistiesViewModel> {
@@ -24,7 +24,7 @@ class SpecialistiesView extends StackedView<SpecialistiesViewModel> {
       backgroundColor: kcBackgroundColor,
       body: Column(
         children: [
-          CustomAppBar(
+          CustomAppBarView(
             title: 'Specialist Doctor',
             icon: 'assets/images/filter.png',
           ),

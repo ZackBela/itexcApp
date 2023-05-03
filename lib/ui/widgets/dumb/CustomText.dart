@@ -12,7 +12,7 @@ class CustomText extends StatelessWidget {
     this.weight,
     this.undeliuned,
     this.textAlign,
-    this.maxLines,
+    this.maxLines = 1,
   }) : super(key: key);
   String? text;
   Color? color;

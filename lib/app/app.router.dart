@@ -5,27 +5,38 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i20;
+import 'package:flutter/material.dart' as _i28;
 import 'package:flutter/material.dart';
+import 'package:itexc_app/ui/views/appearence/appearence_view.dart' as _i25;
 import 'package:itexc_app/ui/views/appointement/appointement_view.dart' as _i19;
 import 'package:itexc_app/ui/views/appointement_booking/appointement_booking_view.dart'
     as _i17;
+import 'package:itexc_app/ui/views/appointement_page/appointement_page_view.dart'
+    as _i20;
 import 'package:itexc_app/ui/views/appointement_patient_details/appointement_patient_details_view.dart'
     as _i18;
 import 'package:itexc_app/ui/views/doctor_page/doctor_page_view.dart' as _i16;
 import 'package:itexc_app/ui/views/favorites/favorites_view.dart' as _i12;
 import 'package:itexc_app/ui/views/forget_password/forget_password_view.dart'
     as _i9;
+import 'package:itexc_app/ui/views/help/help_view.dart' as _i26;
+import 'package:itexc_app/ui/views/history/history_view.dart' as _i21;
 import 'package:itexc_app/ui/views/home/home_view.dart' as _i2;
+import 'package:itexc_app/ui/views/invite_freinds/invite_freinds_view.dart'
+    as _i27;
 import 'package:itexc_app/ui/views/landing_page/landing_page_view.dart' as _i5;
 import 'package:itexc_app/ui/views/notifications/notifications_view.dart'
     as _i11;
 import 'package:itexc_app/ui/views/onboarding/onboarding_view.dart' as _i4;
 import 'package:itexc_app/ui/views/principal/principal_view.dart' as _i10;
+import 'package:itexc_app/ui/views/profile/profile_view.dart' as _i22;
 import 'package:itexc_app/ui/views/profile_details/profile_details_view.dart'
     as _i8;
+import 'package:itexc_app/ui/views/profile_notifications/profile_notifications_view.dart'
+    as _i23;
 import 'package:itexc_app/ui/views/search_screen/search_screen_view.dart'
     as _i13;
+import 'package:itexc_app/ui/views/securite/securite_view.dart' as _i24;
 import 'package:itexc_app/ui/views/sing_in/sing_in_view.dart' as _i6;
 import 'package:itexc_app/ui/views/sing_up/sing_up_view.dart' as _i7;
 import 'package:itexc_app/ui/views/specialisties/specialisties_view.dart'
@@ -33,7 +44,7 @@ import 'package:itexc_app/ui/views/specialisties/specialisties_view.dart'
 import 'package:itexc_app/ui/views/startup/startup_view.dart' as _i3;
 import 'package:itexc_app/ui/views/top_doctors/top_doctors_view.dart' as _i14;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i21;
+import 'package:stacked_services/stacked_services.dart' as _i29;
 
 class Routes {
   static const homeView = '/home-view';
@@ -73,6 +84,22 @@ class Routes {
 
   static const appointementView = '/appointement-view';
 
+  static const appointementPageView = '/appointement-page-view';
+
+  static const historyView = '/history-view';
+
+  static const profileView = '/profile-view';
+
+  static const profileNotificationsView = '/profile-notifications-view';
+
+  static const securiteView = '/securite-view';
+
+  static const appearenceView = '/appearence-view';
+
+  static const helpView = '/help-view';
+
+  static const inviteFreindsView = '/invite-freinds-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -92,6 +119,14 @@ class Routes {
     appointementBookingView,
     appointementPatientDetailsView,
     appointementView,
+    appointementPageView,
+    historyView,
+    profileView,
+    profileNotificationsView,
+    securiteView,
+    appearenceView,
+    helpView,
+    inviteFreindsView,
   };
 }
 
@@ -169,114 +204,194 @@ class StackedRouter extends _i1.RouterBase {
       Routes.appointementView,
       page: _i19.AppointementView,
     ),
+    _i1.RouteDef(
+      Routes.appointementPageView,
+      page: _i20.AppointementPageView,
+    ),
+    _i1.RouteDef(
+      Routes.historyView,
+      page: _i21.HistoryView,
+    ),
+    _i1.RouteDef(
+      Routes.profileView,
+      page: _i22.ProfileView,
+    ),
+    _i1.RouteDef(
+      Routes.profileNotificationsView,
+      page: _i23.ProfileNotificationsView,
+    ),
+    _i1.RouteDef(
+      Routes.securiteView,
+      page: _i24.SecuriteView,
+    ),
+    _i1.RouteDef(
+      Routes.appearenceView,
+      page: _i25.AppearenceView,
+    ),
+    _i1.RouteDef(
+      Routes.helpView,
+      page: _i26.HelpView,
+    ),
+    _i1.RouteDef(
+      Routes.inviteFreindsView,
+      page: _i27.InviteFreindsView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.OnboardingView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.OnboardingView(),
         settings: data,
       );
     },
     _i5.LandingPageView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.LandingPageView(),
         settings: data,
       );
     },
     _i6.SingInView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.SingInView(),
         settings: data,
       );
     },
     _i7.SingUpView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.SingUpView(),
         settings: data,
       );
     },
     _i8.ProfileDetailsView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.ProfileDetailsView(),
         settings: data,
       );
     },
     _i9.ForgetPasswordView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.ForgetPasswordView(),
         settings: data,
       );
     },
     _i10.PrincipalView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.PrincipalView(),
         settings: data,
       );
     },
     _i11.NotificationsView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.NotificationsView(),
         settings: data,
       );
     },
     _i12.FavoritesView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.FavoritesView(),
         settings: data,
       );
     },
     _i13.SearchScreenView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.SearchScreenView(),
         settings: data,
       );
     },
     _i14.TopDoctorsView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.TopDoctorsView(),
         settings: data,
       );
     },
     _i15.SpecialistiesView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i15.SpecialistiesView(),
         settings: data,
       );
     },
     _i16.DoctorPageView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i16.DoctorPageView(),
         settings: data,
       );
     },
     _i17.AppointementBookingView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i17.AppointementBookingView(),
         settings: data,
       );
     },
     _i18.AppointementPatientDetailsView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i18.AppointementPatientDetailsView(),
         settings: data,
       );
     },
     _i19.AppointementView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i28.MaterialPageRoute<dynamic>(
         builder: (context) => const _i19.AppointementView(),
+        settings: data,
+      );
+    },
+    _i20.AppointementPageView: (data) {
+      return _i28.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i20.AppointementPageView(),
+        settings: data,
+      );
+    },
+    _i21.HistoryView: (data) {
+      return _i28.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i21.HistoryView(),
+        settings: data,
+      );
+    },
+    _i22.ProfileView: (data) {
+      return _i28.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i22.ProfileView(),
+        settings: data,
+      );
+    },
+    _i23.ProfileNotificationsView: (data) {
+      return _i28.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i23.ProfileNotificationsView(),
+        settings: data,
+      );
+    },
+    _i24.SecuriteView: (data) {
+      return _i28.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i24.SecuriteView(),
+        settings: data,
+      );
+    },
+    _i25.AppearenceView: (data) {
+      return _i28.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i25.AppearenceView(),
+        settings: data,
+      );
+    },
+    _i26.HelpView: (data) {
+      return _i28.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i26.HelpView(),
+        settings: data,
+      );
+    },
+    _i27.InviteFreindsView: (data) {
+      return _i28.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i27.InviteFreindsView(),
         settings: data,
       );
     },
@@ -288,7 +403,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i21.NavigationService {
+extension NavigatorStateExtension on _i29.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -541,6 +656,118 @@ extension NavigatorStateExtension on _i21.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToAppointementPageView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.appointementPageView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToHistoryView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.historyView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToProfileView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.profileView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToProfileNotificationsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.profileNotificationsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToSecuriteView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.securiteView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToAppearenceView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.appearenceView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToHelpView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.helpView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToInviteFreindsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.inviteFreindsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -787,6 +1014,118 @@ extension NavigatorStateExtension on _i21.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.appointementView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithAppointementPageView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.appointementPageView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithHistoryView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.historyView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithProfileView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.profileView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithProfileNotificationsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.profileNotificationsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSecuriteView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.securiteView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithAppearenceView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.appearenceView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithHelpView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.helpView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithInviteFreindsView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.inviteFreindsView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

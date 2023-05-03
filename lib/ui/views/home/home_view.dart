@@ -41,12 +41,16 @@ class HomeView extends StackedView<HomeViewModel> {
                 Spacer(),
                 CustomActionButtom(
                   icon: 'assets/images/bell.png',
-                  ontap: () {},
+                  ontap: () {
+                    viewModel.goToNotifications();
+                  },
                 ),
                 horizontalSpaceSmall,
                 CustomActionButtom(
                   icon: 'assets/images/heart.png',
-                  ontap: () {},
+                  ontap: () {
+                    viewModel.goToFavDoctors();
+                  },
                 ),
               ],
             ).padding(all: pSh(context: context, percentage: .0)),
@@ -68,14 +72,30 @@ class HomeView extends StackedView<HomeViewModel> {
               ],
             ),
             verticalSpaceMedium,
-            CustomTextField(
-              hintText: 'Search',
-              backgroundcolor: Color(0xffF4F6F9),
-              suffix: Image.asset(
-                'assets/images/search.png',
-                color: kcTextColor.withOpacity(.2),
-              ).padding(horizontal: pSh(context: context, percentage: .019)),
-            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CustomText(text: 'Search'),
+                Image.asset(
+                  'assets/images/search.png',
+                  height: pSh(context: context, percentage: .025),
+                  width: pSh(context: context, percentage: .025),
+                )
+              ],
+            )
+                .width(pSw(context: context))
+                .height(pSh(context: context, percentage: .03))
+                .padding(
+                  vertical: pSh(context: context, percentage: .014),
+                  horizontal: pSh(context: context, percentage: .02),
+                )
+                .decorated(
+                    color: kcTextColor.withOpacity(.06),
+                    borderRadius: BorderRadius.circular(
+                        pSh(context: context, percentage: .03)))
+                .gestures(onTap: () {
+              viewModel.goToSearch();
+            }),
             verticalSpaceMedium,
             // verticalSpaceSmall,
             Row(
@@ -92,64 +112,28 @@ class HomeView extends StackedView<HomeViewModel> {
                   color: kcPrimaryColor,
                   size: pSh(context: context, percentage: .018),
                   weight: FontWeight.w500,
-                ),
+                ).gestures(onTap: () {
+                  viewModel.goToSpecialDoctors();
+                }),
               ],
             ),
             verticalSpaceSmall,
             verticalSpaceSmall,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Wrap(
+              alignment: WrapAlignment.spaceBetween,
               children: [
-                for (var item in specialDoctorData)
-                  Column(
-                    children: [
-                      Image.asset(
-                        'assets/images/bell.png',
-                        color: kcBackgroundColor,
-                        height: pSh(context: context, percentage: .028),
-                        width: pSh(context: context, percentage: .028),
-                      )
-                          .padding(all: pSh(context: context, percentage: .019))
-                          .decorated(
-                              color: kcPrimaryColor,
-                              borderRadius: BorderRadius.circular(
-                                  pSh(context: context, percentage: .01))),
-                      verticalSpaceTiny,
-                      CustomText(
-                        text: 'hddjkbjk',
-                        size: pSh(context: context, percentage: .015),
-                      )
-                    ],
-                  ),
+                for (var item in specialDoctorButonData)
+                  SpecialDoctorHomeButon(
+                    color: item['color'],
+                    icon: item['icon'],
+                    text: item['title'],
+                  )
+                      .width(pSw(context: context, percentage: .2))
+                      .padding(bottom: pSh(context: context, percentage: .015)),
               ],
-            ).padding(horizontal: pSh(context: context, percentage: .01)),
-            verticalSpaceMedium,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                for (var item in specialDoctorData)
-                  Column(
-                    children: [
-                      Image.asset(
-                        'assets/images/bell.png',
-                        color: kcBackgroundColor,
-                        height: pSh(context: context, percentage: .028),
-                        width: pSh(context: context, percentage: .028),
-                      )
-                          .padding(all: pSh(context: context, percentage: .019))
-                          .decorated(
-                              color: kcPrimaryColor,
-                              borderRadius: BorderRadius.circular(
-                                  pSh(context: context, percentage: .01))),
-                      verticalSpaceTiny,
-                      CustomText(
-                        text: 'hddjkbjk',
-                        size: pSh(context: context, percentage: .015),
-                      )
-                    ],
-                  ),
-              ],
-            ).padding(horizontal: pSh(context: context, percentage: .01)),
+            )
+                .padding(horizontal: pSh(context: context, percentage: .01))
+                .width(pSw(context: context)),
 
             verticalSpaceMedium,
             Row(
@@ -166,7 +150,9 @@ class HomeView extends StackedView<HomeViewModel> {
                   color: kcPrimaryColor,
                   size: pSh(context: context, percentage: .017),
                   weight: FontWeight.w500,
-                ),
+                ).gestures(onTap: () {
+                  viewModel.goToTopDoctors();
+                }),
               ],
             ),
             verticalSpaceSmall,
@@ -177,7 +163,10 @@ class HomeView extends StackedView<HomeViewModel> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, int index) {
                 return DoctorWidget()
-                    .padding(right: pSh(context: context, percentage: .019));
+                    .padding(right: pSh(context: context, percentage: .019))
+                    .gestures(onTap: () {
+                  viewModel.goToDoctorPage();
+                });
               },
             ).height(pSh(context: context, percentage: .21)),
           ],
@@ -189,4 +178,49 @@ class HomeView extends StackedView<HomeViewModel> {
     BuildContext context,
   ) =>
       HomeViewModel();
+}
+
+class SpecialDoctorHomeButon extends StatelessWidget {
+  SpecialDoctorHomeButon({
+    super.key,
+    required this.text,
+    required this.color,
+    required this.icon,
+  });
+  String? text;
+  String? icon;
+  Color? color;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Stack(
+          children: [
+            Image.asset(
+              icon!,
+              color: kcBackgroundColor,
+              height: pSh(context: context, percentage: .03),
+              width: pSh(context: context, percentage: .03),
+            ).padding(all: pSh(context: context, percentage: .019)).decorated(
+                color: color,
+                borderRadius: BorderRadius.circular(
+                    pSh(context: context, percentage: .01))),
+            Container()
+                .height(pSh(context: context, percentage: .032))
+                .width(pSh(context: context, percentage: .032))
+                .decorated(
+                    color: kcBackgroundColor.withOpacity(.2),
+                    shape: BoxShape.circle)
+                .positioned(top: -7, left: -6)
+          ],
+        ),
+        verticalSpaceTiny,
+        CustomText(
+          text: text,
+          size: pSh(context: context, percentage: .015),
+          weight: FontWeight.bold,
+        )
+      ],
+    );
+  }
 }

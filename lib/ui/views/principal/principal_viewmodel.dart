@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:itexc_app/ui/common/app_colors.dart';
 import 'package:itexc_app/ui/views/appointement/appointement_view.dart';
+import 'package:itexc_app/ui/views/history/history_view.dart';
 import 'package:itexc_app/ui/views/home/home_view.dart';
+import 'package:itexc_app/ui/views/profile/profile_view.dart';
 import 'package:stacked/stacked.dart';
 
 class PrincipalViewModel extends BaseViewModel {
@@ -23,14 +25,10 @@ class PrincipalViewModel extends BaseViewModel {
         selectedScreen = AppointementView();
         break;
       case 2:
-        selectedScreen = Container(
-          color: kcSecondaryColor,
-        );
+        selectedScreen = HistoryView();
         break;
       case 3:
-        selectedScreen = Container(
-          color: Colors.red,
-        );
+        selectedScreen = ProfileView();
         break;
 
       default:

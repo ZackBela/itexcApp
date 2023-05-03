@@ -28,7 +28,9 @@ class SearchScreenView extends StackedView<SearchScreenViewModel> {
             Icon(
               Icons.arrow_back,
               color: kcPrimaryColor,
-            ),
+            ).gestures(onTap: () {
+              viewModel.goBack();
+            }),
             Spacer(),
             CustomTextField(
               hintText: 'search',

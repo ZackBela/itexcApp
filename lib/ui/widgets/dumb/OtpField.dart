@@ -28,6 +28,7 @@ class OtpField extends StatelessWidget {
             animationType: AnimationType.fade,
             enableActiveFill: false,
             showCursor: false,
+            keyboardType: TextInputType.number,
             pinTheme: PinTheme(
                 shape: PinCodeFieldShape.box,
                 borderRadius: BorderRadius.circular(

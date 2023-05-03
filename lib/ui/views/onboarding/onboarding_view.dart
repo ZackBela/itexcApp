@@ -24,6 +24,8 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
         children: [
           PageView.builder(
               itemCount: onBoradingData.length,
+              controller: viewModel.pageController,
+              physics: NeverScrollableScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return Column(
                   children: [
@@ -58,19 +60,40 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
               }).expanded(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  for (var item in onBoradingData)
-                    Container()
-                        .height(pSh(context: context, percentage: .010))
-                        .width(pSh(context: context, percentage: .010))
-                        .decorated(color: kcTextColor, shape: BoxShape.circle)
-                        .padding(
-                            right: pSh(context: context, percentage: .008)),
-                ],
-              ).width(pSw(context: context)),
+              ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: onBoradingData.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container()
+                      .height(pSh(context: context, percentage: .010))
+                      .width(pSh(context: context, percentage: .010))
+                      .decorated(
+                          // color: index == viewModel.pageController.position
+                          //     ? kcPrimaryColor
+                          //     : kcTextColor.withOpacity(.2),
+                          shape: BoxShape.circle)
+                      .padding(right: pSh(context: context, percentage: .008));
+                },
+              )
+                  .height(pSh(context: context, percentage: .01))
+                  .width(pSw(context: context, percentage: .1)),
+
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     for (var item in onBoradingData)
+              //       Container()
+              //           .height(pSh(context: context, percentage: .010))
+              //           .width(pSh(context: context, percentage: .010))
+              //           .decorated(
+              //               color: kcTextColor.withOpacity(.2),
+              //               shape: BoxShape.circle)
+              //           .padding(
+              //               right: pSh(context: context, percentage: .008)),
+              //   ],
+              // ).width(pSw(context: context)),
               verticalSpaceMedium,
               verticalSpaceMedium,
               verticalSpaceMedium,
@@ -79,11 +102,19 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
                 backgroundColor: kcBackgroundColor,
                 textColor: kcPrimaryColor,
                 hasBorder: true,
+                onTap: () {
+                  viewModel.pageController.nextPage(
+                      duration: Duration(milliseconds: 800),
+                      curve: Curves.fastLinearToSlowEaseIn);
+                },
               ),
               verticalSpaceMedium,
               CustomButton(
                 text: 'Sign Up',
                 isGradient: true,
+                onTap: () {
+                  viewModel.goToSignUp();
+                },
               ),
             ],
           ).padding(all: pSh(context: context, percentage: .02))

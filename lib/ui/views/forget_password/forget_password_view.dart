@@ -6,10 +6,10 @@ import 'package:stacked/stacked.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import '../../common/ui_helpers.dart';
-import '../../widgets/dumb/CustomAppBar.dart';
 import '../../widgets/dumb/EnterNewPassword.dart';
 import '../../widgets/dumb/OtpField.dart';
 import '../../widgets/dumb/SelectretrievingPasswordMethode.dart';
+import '../../widgets/smart/CustomAppBar/custom_app_bar_view.dart';
 import 'forget_password_viewmodel.dart';
 
 class ForgetPasswordView extends StackedView<ForgetPasswordViewModel> {
@@ -25,15 +25,25 @@ class ForgetPasswordView extends StackedView<ForgetPasswordViewModel> {
       backgroundColor: kcBackgroundColor,
       body: Column(
         children: [
-          CustomAppBar(
+          CustomAppBarView(
             title: 'Forgot Password',
           ),
           verticalSpaceSmall,
           verticalSpaceTiny,
           verticalSpaceSmall,
           PageView(
+            physics: NeverScrollableScrollPhysics(),
+            controller: viewModel.pagecontroller,
             children: [
-              SelectretrievingPasswordMethode(),
+              SelectretrievingPasswordMethode(
+                index: viewModel.methodeSelected,
+                onEmailTap: () {
+                  viewModel.updateMethodeSelected(1);
+                },
+                onSmsTap: () {
+                  viewModel.updateMethodeSelected(0);
+                },
+              ),
               OtpField(),
               EnterNewPassword(),
             ],
@@ -41,6 +51,9 @@ class ForgetPasswordView extends StackedView<ForgetPasswordViewModel> {
           CustomButton(
             text: 'Continue',
             isGradient: true,
+            onTap: () {
+              viewModel.nextPage();
+            },
           ),
           verticalSpaceMedium,
         ],

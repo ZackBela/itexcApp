@@ -6,6 +6,11 @@ import '../../../app/app.bottomsheets.dart';
 
 class FavoritesViewModel extends BaseViewModel {
   final _bottomSheetService = locator<BottomSheetService>();
+  final _navigationService = locator<NavigationService>();
+  goBack() {
+    _navigationService.back();
+  }
+
   void showdeleteFavDoctorBottomSheet() {
     _bottomSheetService.showCustomSheet(
       variant: BottomSheetType.updateFavDoctorStatus,

@@ -6,8 +6,8 @@ import 'package:itexc_app/ui/widgets/dumb/CustomText.dart';
 import 'package:stacked/stacked.dart';
 import 'package:styled_widget/styled_widget.dart';
 
-import '../../widgets/dumb/CustomAppBar.dart';
 import '../../widgets/dumb/CustomTextField.dart';
+import '../../widgets/smart/CustomAppBar/custom_app_bar_view.dart';
 import 'profile_details_viewmodel.dart';
 
 class ProfileDetailsView extends StackedView<ProfileDetailsViewModel> {
@@ -24,7 +24,7 @@ class ProfileDetailsView extends StackedView<ProfileDetailsViewModel> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CustomAppBar(
+          CustomAppBarView(
             title: 'Profile Details',
           ),
           verticalSpaceSmall,
@@ -101,6 +101,9 @@ class ProfileDetailsView extends StackedView<ProfileDetailsViewModel> {
           CustomButton(
             text: 'Next',
             isGradient: true,
+            onTap: () {
+              viewModel.goToHome();
+            },
           ),
           verticalSpaceSmall,
         ],

@@ -57,7 +57,7 @@ class AppointementConfirmationDialog
               text: 'Back to home',
               isGradient: true,
               onTap: () {
-                viewModel.goBack();
+                viewModel.GoHome();
               },
             ),
           ],

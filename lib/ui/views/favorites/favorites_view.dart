@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:itexc_app/ui/common/app_colors.dart';
 import 'package:itexc_app/ui/common/ui_helpers.dart';
-import 'package:itexc_app/ui/widgets/dumb/CustomAppBar.dart';
 import 'package:itexc_app/ui/widgets/dumb/CustomTextField.dart';
 import 'package:itexc_app/ui/widgets/dumb/DoctorWidget.dart';
 import 'package:stacked/stacked.dart';
 import 'package:styled_widget/styled_widget.dart';
 
+import '../../widgets/smart/CustomAppBar/custom_app_bar_view.dart';
 import 'favorites_viewmodel.dart';
 
 class FavoritesView extends StackedView<FavoritesViewModel> {
@@ -22,7 +22,7 @@ class FavoritesView extends StackedView<FavoritesViewModel> {
       backgroundColor: kcBackgroundColor,
       body: Column(
         children: [
-          CustomAppBar(
+          CustomAppBarView(
             title: 'Favorite Doctor',
             icon: 'assets/images/filter.png',
           ),

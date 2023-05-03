@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:itexc_app/ui/common/app_colors.dart';
 import 'package:itexc_app/ui/common/app_data.dart';
 import 'package:itexc_app/ui/common/ui_helpers.dart';
-import 'package:itexc_app/ui/widgets/dumb/CustomAppBar.dart';
 import 'package:itexc_app/ui/widgets/dumb/CustomButton.dart';
 import 'package:itexc_app/ui/widgets/dumb/CustomText.dart';
+import 'package:itexc_app/ui/widgets/smart/CustomAppBar/custom_app_bar_view.dart';
 import 'package:stacked/stacked.dart';
 import 'package:styled_widget/styled_widget.dart';
 
@@ -25,7 +25,7 @@ class AppointementBookingView
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar(title: 'Book Appointment'),
+          CustomAppBarView(title: 'Book Appointment'),
           verticalSpaceMedium,
           CustomText(
             text: 'Monday, March 25 2022',
@@ -140,7 +140,10 @@ class AppointementBookingView
           Spacer(),
           CustomButton(
             text: 'Next',
-            backgroundColor: kcPrimaryColor.withOpacity(.5),
+            backgroundColor: kcPrimaryColor,
+            onTap: () {
+              viewModel.goToPatientDetails();
+            },
           )
         ],
       ).safeArea().padding(all: pSh(context: context, percentage: .025)),

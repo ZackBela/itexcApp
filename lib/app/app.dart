@@ -23,6 +23,14 @@ import 'package:itexc_app/ui/views/appointement_booking/appointement_booking_vie
 import 'package:itexc_app/ui/views/appointement_patient_details/appointement_patient_details_view.dart';
 import 'package:itexc_app/ui/dialogs/appointement_confirmation/appointement_confirmation_dialog.dart';
 import 'package:itexc_app/ui/views/appointement/appointement_view.dart';
+import 'package:itexc_app/ui/views/appointement_page/appointement_page_view.dart';
+import 'package:itexc_app/ui/views/history/history_view.dart';
+import 'package:itexc_app/ui/views/profile/profile_view.dart';
+import 'package:itexc_app/ui/views/profile_notifications/profile_notifications_view.dart';
+import 'package:itexc_app/ui/views/securite/securite_view.dart';
+import 'package:itexc_app/ui/views/appearence/appearence_view.dart';
+import 'package:itexc_app/ui/views/help/help_view.dart';
+import 'package:itexc_app/ui/views/invite_freinds/invite_freinds_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -45,6 +53,14 @@ import 'package:itexc_app/ui/views/appointement/appointement_view.dart';
     MaterialRoute(page: AppointementBookingView),
     MaterialRoute(page: AppointementPatientDetailsView),
     MaterialRoute(page: AppointementView),
+    MaterialRoute(page: AppointementPageView),
+    MaterialRoute(page: HistoryView),
+    MaterialRoute(page: ProfileView),
+    MaterialRoute(page: ProfileNotificationsView),
+    MaterialRoute(page: SecuriteView),
+    MaterialRoute(page: AppearenceView),
+    MaterialRoute(page: HelpView),
+    MaterialRoute(page: InviteFreindsView),
 // @stacked-route
   ],
   dependencies: [

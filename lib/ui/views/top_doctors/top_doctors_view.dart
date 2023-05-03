@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:itexc_app/ui/common/app_colors.dart';
-import 'package:itexc_app/ui/widgets/dumb/CustomAppBar.dart';
 import 'package:stacked/stacked.dart';
 import 'package:styled_widget/styled_widget.dart';
 
@@ -9,6 +8,7 @@ import '../../common/ui_helpers.dart';
 import '../../widgets/dumb/CustomText.dart';
 import '../../widgets/dumb/CustomTextField.dart';
 import '../../widgets/dumb/HorizontalDoctorWidget.dart';
+import '../../widgets/smart/CustomAppBar/custom_app_bar_view.dart';
 import 'top_doctors_viewmodel.dart';
 
 class TopDoctorsView extends StackedView<TopDoctorsViewModel> {
@@ -23,7 +23,7 @@ class TopDoctorsView extends StackedView<TopDoctorsViewModel> {
     return Scaffold(
       backgroundColor: kcBackgroundColor,
       body: Column(children: [
-        CustomAppBar(
+        CustomAppBarView(
           title: 'Top Doctors',
           icon: 'assets/images/filter.png',
         ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:itexc_app/ui/common/app_colors.dart';
-import 'package:itexc_app/ui/widgets/dumb/CustomAppBar.dart';
 import 'package:itexc_app/ui/widgets/dumb/CustomText.dart';
 import 'package:stacked/stacked.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import '../../common/ui_helpers.dart';
+import '../../widgets/smart/CustomAppBar/custom_app_bar_view.dart';
 import 'notifications_viewmodel.dart';
 
 class NotificationsView extends StackedView<NotificationsViewModel> {
@@ -22,7 +22,7 @@ class NotificationsView extends StackedView<NotificationsViewModel> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar(title: 'Notifications'),
+          CustomAppBarView(title: 'Notifications'),
           verticalSpaceMedium,
           CustomText(
             text: 'Today march 25 2023',

@@ -6,7 +6,7 @@ import '../../common/ui_helpers.dart';
 class CustomTextField extends StatelessWidget {
   CustomTextField({
     Key? key,
-    this.texteditingController,
+    // this.texteditingController,
     this.validator,
     this.onchanged,
     this.onSubmit,
@@ -22,7 +22,7 @@ class CustomTextField extends StatelessWidget {
     this.backgroundcolor = kcBackgroundColor,
     this.maxLines,
   }) : super(key: key);
-  final TextEditingController? texteditingController;
+  // final TextEditingController? texteditingController;
   final String? hintText;
   final String? Function(String?)? validator;
   final String? Function(String?)? onSubmit;
@@ -42,7 +42,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: texteditingController,
+      // controller: texteditingController,
       cursorColor: kcPrimaryColor,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
