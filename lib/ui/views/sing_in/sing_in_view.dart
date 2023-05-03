@@ -19,6 +19,7 @@ class SingInView extends StackedView<SingInViewModel> {
     Widget? child,
   ) {
     return Scaffold(
+      // key: scaffoldkey,
       backgroundColor: kcBackgroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -146,8 +147,7 @@ class SingInView extends StackedView<SingInViewModel> {
                 text: 'Sign Up',
                 weight: FontWeight.w600,
                 color: kcPrimaryColor,
-              ),
-              gestures(
+              ).gestures(
                 onTap: () {
                   viewModel.goToSignUp();
                 },

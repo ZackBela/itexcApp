@@ -31,6 +31,7 @@ import 'package:itexc_app/ui/views/securite/securite_view.dart';
 import 'package:itexc_app/ui/views/appearence/appearence_view.dart';
 import 'package:itexc_app/ui/views/help/help_view.dart';
 import 'package:itexc_app/ui/views/invite_freinds/invite_freinds_view.dart';
+import 'package:itexc_app/ui/bottom_sheets/disconnect/disconnect_sheet.dart';
 // @stacked-import
 
 @StackedApp(
@@ -73,6 +74,7 @@ import 'package:itexc_app/ui/views/invite_freinds/invite_freinds_view.dart';
     StackedBottomsheet(classType: NoticeSheet),
     StackedBottomsheet(classType: UpdateFavDoctorStatusSheet),
     StackedBottomsheet(classType: DoctorShareSheet),
+    StackedBottomsheet(classType: DisconnectSheet),
 // @stacked-bottom-sheet
   ],
   dialogs: [

@@ -265,13 +265,13 @@ class StackedRouter extends _i1.RouterBase {
     },
     _i6.SingInView: (data) {
       return _i28.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i6.SingInView(),
+        builder: (context) =>  _i6.SingInView(),
         settings: data,
       );
     },
     _i7.SingUpView: (data) {
       return _i28.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i7.SingUpView(),
+        builder: (context) =>  _i7.SingUpView(),
         settings: data,
       );
     },

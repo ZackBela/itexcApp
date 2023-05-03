@@ -70,14 +70,14 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
                       .height(pSh(context: context, percentage: .010))
                       .width(pSh(context: context, percentage: .010))
                       .decorated(
-                          // color: index == viewModel.pageController.position
-                          //     ? kcPrimaryColor
-                          //     : kcTextColor.withOpacity(.2),
+                          color: index == viewModel.page
+                              ? kcPrimaryColor
+                              : kcTextColor.withOpacity(.2),
                           shape: BoxShape.circle)
                       .padding(right: pSh(context: context, percentage: .008));
                 },
               )
-                  .height(pSh(context: context, percentage: .01))
+                  .height(pSh(context: context, percentage: .02))
                   .width(pSw(context: context, percentage: .1)),
 
               // Row(
@@ -103,9 +103,7 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
                 textColor: kcPrimaryColor,
                 hasBorder: true,
                 onTap: () {
-                  viewModel.pageController.nextPage(
-                      duration: Duration(milliseconds: 800),
-                      curve: Curves.fastLinearToSlowEaseIn);
+                  viewModel.nextPage();
                 },
               ),
               verticalSpaceMedium,

@@ -10,7 +10,9 @@ import '../../widgets/dumb/CustomTextField.dart';
 import 'sing_up_viewmodel.dart';
 
 class SingUpView extends StackedView<SingUpViewModel> {
-  const SingUpView({Key? key}) : super(key: key);
+  SingUpView({
+    Key? key,
+  });
 
   @override
   Widget builder(
@@ -19,6 +21,7 @@ class SingUpView extends StackedView<SingUpViewModel> {
     Widget? child,
   ) {
     return Scaffold(
+      // key: scaffoldkey,
       backgroundColor: kcBackgroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -148,7 +151,7 @@ class SingUpView extends StackedView<SingUpViewModel> {
                 color: kcPrimaryColor,
               ).gestures(
                 onTap: () {
-                  // viewModel.goToSignIn();
+                  viewModel.goToSignIn();
                 },
               ),
             ],

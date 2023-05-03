@@ -33,6 +33,9 @@ class LandingPageView extends StackedView<LandingPageViewModel> {
           CustomButton(
             text: 'Sing up',
             isGradient: true,
+            onTap: () {
+              viewModel.goToSignUp();
+            },
           ),
           verticalSpaceMedium,
           CustomButton(
@@ -40,6 +43,9 @@ class LandingPageView extends StackedView<LandingPageViewModel> {
             hasBorder: true,
             backgroundColor: kcBackgroundColor,
             textColor: kcPrimaryColor,
+            onTap: () {
+              viewModel.goToSignIn();
+            },
           ),
           verticalSpaceMedium,
         ],

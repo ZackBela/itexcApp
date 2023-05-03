@@ -4,7 +4,7 @@ import 'package:itexc_app/app/app.locator.dart';
 import '../helpers/test_helpers.dart';
 
 void main() {
-  group('ProfileViewModel Tests -', () {
+  group('DisconnectSheetModel Tests -', () {
     setUp(() => registerServices());
     tearDown(() => locator.reset());
   });

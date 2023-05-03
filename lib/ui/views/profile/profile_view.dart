@@ -131,7 +131,9 @@ class ProfileView extends StackedView<ProfileViewModel> {
             color: Colors.red,
             icon: 'assets/images/logout.png',
             text: 'Log Out',
-            ontap: () {},
+            ontap: () {
+              viewModel.showDisconnectBottomSheet();
+            },
           ),
         ],
       ).safeArea().padding(all: pSh(context: context, percentage: .025)),
